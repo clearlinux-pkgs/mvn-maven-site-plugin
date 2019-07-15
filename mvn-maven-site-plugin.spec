@@ -4,7 +4,7 @@
 #
 Name     : mvn-maven-site-plugin
 Version  : 3.5.1
-Release  : 1
+Release  : 2
 URL      : https://github.com/apache/maven-site-plugin/archive/maven-site-plugin-3.5.1.tar.gz
 Source0  : https://github.com/apache/maven-site-plugin/archive/maven-site-plugin-3.5.1.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-site-plugin/3.5.1/maven-site-plugin-3.5.1.jar
@@ -12,16 +12,36 @@ Source2  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-s
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
+Requires: mvn-maven-site-plugin-data = %{version}-%{release}
 
 %description
 The projects under parentNotAsRef/ and parentAsRef/ are identical
 except for the inheritAsRef parameter in the parent's site.xml.
+
+%package data
+Summary: data components for the mvn-maven-site-plugin package.
+Group: Data
+
+%description data
+data components for the mvn-maven-site-plugin package.
+
 
 %prep
 
 %build
 
 %install
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-site-plugin/3.5.1
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-site-plugin/3.5.1
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-site-plugin/3.5.1
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-site-plugin/3.5.1
+
 
 %files
 %defattr(-,root,root,-)
+
+%files data
+%defattr(-,root,root,-)
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-site-plugin/3.5.1/maven-site-plugin-3.5.1.jar
+/usr/share/java/.m2/repository/org/apache/maven/plugins/maven-site-plugin/3.5.1/maven-site-plugin-3.5.1.pom
