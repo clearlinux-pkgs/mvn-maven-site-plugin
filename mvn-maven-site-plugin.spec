@@ -4,7 +4,7 @@
 #
 Name     : mvn-maven-site-plugin
 Version  : 3.5.1
-Release  : 3
+Release  : 4
 URL      : https://github.com/apache/maven-site-plugin/archive/maven-site-plugin-3.5.1.tar.gz
 Source0  : https://github.com/apache/maven-site-plugin/archive/maven-site-plugin-3.5.1.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-site-plugin/3.5.1/maven-site-plugin-3.5.1.jar
